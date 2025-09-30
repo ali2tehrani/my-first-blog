@@ -2,6 +2,12 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+'''
+  from blog.models import Post
+  from django.contrib.auth.models import User
+  my_user=User.objects.get(username='root')
+  Post.objects.create(author = my_user, title='title1', text='text1')
+'''
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
